@@ -1,0 +1,11 @@
+BBOX(geom, 20.651090829681213, 44.32331108011568, 22.01560912977849, 43.44522411944535)
+
+ID okruga -2109306 
+
+WITHIN(geom, collectGeometries(queryCollection('faks:Granice','geom','area_id=-2109306')))
+
+DWITHIN(geom, collectGeometries(queryCollection('faks:FCD_Nis','geom','timestep_time < 300 and timestep_time > 220')), 20, meters)
+
+DWITHIN(geom, collectGeometries(queryCollection('faks:EM_Nis','geom','timestep_time < 300 and timestep_time > 220')), 2, meters)
+
+//EQUALS(geom, collectGeometries(queryCollection('faks:NIS_Putevi','geom','DWITHIN(geom, collectGeometries(queryCollection(\\\'faks:FCD_Nis\\\',\\\'geom\\\',\\\'timestep_time < 300 and timestep_time > 220\\\')), 20, meters)')))
